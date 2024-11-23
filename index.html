@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="maintenance.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Saur</title>
+</head>
+
+<body>
+    <div class="global-wrapper">
+        <div class="content-wrapper">
+            <div class="icon-wrapper">
+                <img src="./assets/cloud-with-rain.svg">
+            </div>
+            <div class="error-wrapper">
+                <p><strong>Le site est actuellement en maintenance. Veuillez réessayer ultérieurement.</strong></p>
+                <p><strong>The website is currently under maintenance. Please try again later.</strong></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var n = sessionStorage.length;
+        while(n--) {
+            var key = sessionStorage.key(n);
+            sessionStorage.removeItem(key);
+        }
+        if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+            location.assign("/");
+        }
+    </script>
+</body>
+
+</html>
